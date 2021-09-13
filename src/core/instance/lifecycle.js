@@ -334,6 +334,13 @@ export function deactivateChildComponent (vm: Component, direct?: boolean) {
   }
 }
 
+/**
+ * 
+ * @param {*} vm 
+ * @param {*} hook 
+ * 从实例的$options中获取到需要触发的钩子名称所对应的钩子函数数组handlers，我
+ * 每个生命周期钩子名称都对应了一个钩子函数数组。然后遍历该数组，将数组中的每个钩子函数都执行一遍。
+ */
 export function callHook (vm: Component, hook: string) {
   // #7573 disable dep collection when invoking lifecycle hooks
   pushTarget()

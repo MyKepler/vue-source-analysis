@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue 源码解读</title>
+  </head>
+  <body>
+    <div id="app" @click="test">
+      {{ msg }}
+      <comp :num="5"></comp>
+    </div>
+    <script src="../dist/vue.js"></script>
+    <script>
+      // debugger;
+      Vue.component("comp", {
+        template: '<div>I am comp{{count}} num:{{num}}</div>',
+        data:function() {
+          return {
+            count:0
+          }
+        },
+        props: {
+          num: {
+            type:Number,
+            default: 3
+          }
+        },
+        methods: {
+          test: function () {
+            console.log("test ----");
+          },
+        },
+        mounted:function() {
+          console.log("mounted===="); 
+        },
+      });
+      new Vue({
+        el: "#app",
+        data: {
+          msg: "hello vue",
+        },
+        methods: {
+          test: function () {
+            console.log("test ----");
+          },
+        },
+        mounted:function() {
+          console.log("mounted================================"); 
+        },
+        // components: {
+        //   localComp,
+        //   globalComp,
+        // },
+      });
+      console.log(new Vue(),'new Vue()======');
+    </script>
+  </body>
+</html>
