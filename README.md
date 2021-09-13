@@ -2,7 +2,7 @@
 > **面试题**：new Vue(options) 发生了什么？
 
 ![img.png](https://cdn.nlark.com/yuque/0/2020/png/422501/1606378693533-10c9cc32-007b-4211-a6c3-4aed6fb0373f.png)
-	原型对象的`this`指向实例
+> 原型对象的`this`指向实例
 
 1. 调用原型对象上的 `_init(options)` 方法并把用户所写的选项`options`传入
 2. 处理组件配置项。
