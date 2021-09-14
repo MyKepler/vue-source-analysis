@@ -8,6 +8,7 @@
     <div id="app" @click="test">
       {{ msg }}
       <comp :num="5"></comp>
+      {{test}}
     </div>
     <script src="../dist/vue.js"></script>
     <script>
@@ -38,11 +39,19 @@
         el: "#app",
         data: {
           msg: "hello vue",
+          test:'test'
+        },
+        computed:{
+          // test() {
+          //   return 'computed test'
+          // }
         },
         methods: {
-          test: function () {
-            console.log("test ----");
-          },
+          // test: function () {
+          //   console.log("test ----");
+          //   return 'methods test'
+            
+          // },
         },
         mounted:function() {
           console.log("mounted================================"); 
