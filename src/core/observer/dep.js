@@ -29,6 +29,7 @@ export default class Dep {
   }
 
   depend () {
+    // Dep.target其实是一个watcher
     if (Dep.target) {
       Dep.target.addDep(this)
     }
