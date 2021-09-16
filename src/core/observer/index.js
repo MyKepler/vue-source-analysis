@@ -98,6 +98,7 @@ export class Observer {
 /**
  * Augment a target Object or Array by intercepting
  * the prototype chain using __proto__
+ * 用增强的数组原型方法，覆盖默认的原型方法，之后在执行七个数组方法就有了依赖通知更新的能力，达到数据响应式的目的
  */
 function protoAugment (target, src: Object) {
   /* eslint-disable no-proto */
@@ -108,6 +109,7 @@ function protoAugment (target, src: Object) {
 /**
  * Augment a target Object or Array by defining
  * hidden properties.
+ * 没有原型链，将增强的数组方法直接赋值到数组
  */
 /* istanbul ignore next */
 function copyAugment (target: Object, src: Object, keys: Array<string>) {
